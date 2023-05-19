@@ -1,0 +1,144 @@
+<html>
+   <head>
+    <h1>           <br>            </h1>
+    <center>
+    <h1 style="font-family:'Courier New'">Baseball Clicker</h1>
+    </center>
+		<style>
+		.button {
+  background-color: #6f6f6f;
+			border-radius: 1000px;
+  border: none;
+  color: white;
+  padding: 20px;
+		display:inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+		</style>
+		
+		<style>
+    body {
+        animation-name: happytime;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        background-color: rgb(0, 187, 255);
+    }
+    
+
+</style>
+		
+		<center>
+       <title>Baseball Clicker</title>
+			<img src="https://www.freepnglogos.com/uploads/baseball-png/baseball-cisco-icons-design-0.png" height="256" width="256" onclick="addToScore(1)">
+       <link rel="icon" type="image/x-icon" href="https://www.freepnglogos.com/uploads/baseball-png/baseball-cisco-icons-design-0.png">
+		
+       
+							  <p style="font-family:'Courier New'">Home Runs: <span id="score">0</span></p>
+        </br>
+
+			 <button class="button" onclick="buyPitcher()">Buy Pitcher [<span id="pitcherCost">15</span>] -- <span id="pitchers">0</span></button>
+           <button  class="button" onclick="buyPitchingMachine()">Pitching Machine [<span id="pitchingMachineCost">50</span>] -- <span id="pitchingMachines">0</span></button>
+		 <button class="button" onclick="buyAROD()">A-Rod [<span id="ARODCost">100</span>] -- <span id="ARODs">0</span></button>
+			 <button class="button" onclick="buySosa()">Sammy Sosa  [<span id="sosaCost">150</span>] -- <span id="sosas">0</span></button>
+             <br/>
+             <button class="button" onclick="buyJudge()">Aaron Judge  [<span id="judgeCost">200</span>] -- <span id="judges">0</span></button>
+		 </center>
+   </head>
+    
+    <body>
+		 <center>
+       
+        <script>
+            var score = 0;
+            var pitcherCost = 15;
+            var pitchers = 0;
+            var pitchingMachineCost = 50;
+            var pitchingMachines = 0;
+			  var ARODCost = 100;
+            var ARODs = 0;
+            var sosaCost = 150;
+            var sosas = 0;
+            var judgeCost = 200;
+            var judges = 0;
+            
+            function buyPitcher() {
+                if (score >= pitcherCost) {  
+                    score = score - pitcherCost;
+                    pitchers = pitchers + 1;
+                    pitcherCost = Math.round(pitcherCost * 1.15);
+                    
+                    document.getElementById("score").innerHTML = score;
+                    document.getElementById("pitcherCost").innerHTML = pitcherCost;
+                    document.getElementById("pitchers").innerHTML = pitchers;
+                }
+            }
+            
+             function buyPitchingMachine() {
+                if (score >= pitchingMachineCost) {  
+                    score = score - pitchingMachineCost;
+                    pitchingMachines = pitchingMachines + 1;
+                    pitchingMachineCost = Math.round(pitchingMachineCost * 5.15);
+                    
+                    document.getElementById("score").innerHTML = score;
+                    document.getElementById("pitchingMachineCost").innerHTML = pitchingMachineCost;
+                    document.getElementById("pitchingMachines").innerHTML = pitchingMachines;
+                }
+            }
+			  
+			  function buyAROD() {
+                if (score >= ARODCost) {  
+                    score = score - ARODCost;
+                    ARODs = ARODs + 1;
+                    ARODCost = Math.round(pitchingMachineCost * 5.15);
+                    
+                    document.getElementById("score").innerHTML = score;
+                    document.getElementById("ARODCost").innerHTML = ARODCost;
+                    document.getElementById("ARODs").innerHTML = ARODs;
+                }
+            }
+			  
+            function buySosa() {
+                if (score >= sosaCost) {  
+                    score = score - sosaCost;
+                    sosas = sosas + 1;
+                    sosaCost = Math.round(pitchingMachineCost * 10.15);
+                    
+                    document.getElementById("score").innerHTML = score;
+                    document.getElementById("sosaCost").innerHTML = sosaCost;
+                    document.getElementById("sosas").innerHTML = sosas;
+                }
+            }
+
+            function buyJudge() {
+                if (score >= judgeCost) {  
+                    score = score - judgeCost;
+                    judges = judges + 1;
+                    judgesCost = Math.round(pitchingMachineCost * 12.15);
+                    
+                    document.getElementById("score").innerHTML = score;
+                    document.getElementById("judgeCost").innerHTML = judgeCost;
+                    document.getElementById("jugdes").innerHTML = judges;
+                }
+            }
+			
+                     
+            function addToScore(amount) {
+                score = score + amount;                
+                document.getElementById("score").innerHTML = score;
+                Resi
+            }
+            setInterval(function() {
+                score = score + pitchers;
+                score = score + pitchingMachines * 5;
+					  score = score + ARODs * 10;
+                      score = score + sosas * 15;
+                      score = score + judges * 20;
+                document.getElementById("score").innerHTML = score;
+            }, 1000); // 1000ms = 1 second
+        </script>
+		 </center>
+    </body>
+</html>
